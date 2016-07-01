@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>productsPage</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+    <servlet-name>server</servlet-name>
+    <servlet-class>com.epam.training.servlets.Server</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>datahandler</servlet-name>
+    <servlet-class>com.epam.training.servlets.DataHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>server</servlet-name>
+    <url-pattern>/server</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>datahandler</servlet-name>
+    <url-pattern>/datahandler</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>datafilter</filter-name>
+    <filter-class>com.epam.training.filters.DataFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>datafilter</filter-name>
+    <servlet-name>datahandler</servlet-name>
+  </filter-mapping>
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
+</web-app>
