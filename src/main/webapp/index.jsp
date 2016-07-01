@@ -17,8 +17,6 @@
 		<input type="text" name="count" placeholder="Введите количество" size="30"><br><br>
 		<input class="sub" type="submit" value="Отправить"><br><br>
 	</form>
-	<form action="server" method="get">
-		<input class="sub" type="submit" value="Перейти на страницу заказов" width="150">
-	</form>
+	<a href="server">Перейти на страницу заказов</a>
 </body>
 </html>
